@@ -1,0 +1,25 @@
+{
+  "name": "time-capsule-confessions",
+  "version": "1.0.0",
+  "description": "A web application for users to submit and manage their confessions.",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "bcrypt": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.2",
+    "ts-node": "^9.1.1",
+    "nodemon": "^2.0.7"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

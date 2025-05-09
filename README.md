@@ -1,97 +1,56 @@
-# Time Capsule Confessions
+# Time Capsule Confessions Backend
 
-This project is a full-stack web application that allows users to submit confessions that can be scheduled for future delivery. It consists of a backend built with Node.js and Express, and a frontend built with React.
+This is the backend for the Time Capsule Confessions application. It is built using Node.js, Express, and MongoDB, and is designed to handle user confessions, including creating, retrieving, and deleting them.
 
-## Project Structure
+## Setup Instructions
 
-```
-time-capsule-confessions
-├── backend
-│   ├── src
-│   │   ├── app.ts
-│   │   ├── controllers
-│   │   │   └── confessionController.ts
-│   │   ├── models
-│   │   │   └── confession.ts
-│   │   ├── routes
-│   │   │   └── confessionRoutes.ts
-│   │   └── types
-│   │       └── index.ts
-│   ├── config
-│   │   └── db.js
-│   ├── controllers
-│   │   ├── authController.js
-│   │   └── confessionController.js
-│   ├── middleware
-│   │   └── authMiddleware.js
-│   ├── models
-│   │   ├── User.js
-│   │   └── Confession.js
-│   ├── routes
-│   │   ├── authRoutes.js
-│   │   └── confessionRoutes.js
-│   ├── services
-│   │   └── emailService.js
-│   ├── workers
-│   │   └── emailWorker.js
-│   ├── .env
-│   ├── server.js
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── README.md
-├── frontend
-│   ├── public
-│   ├── src
-│   │   ├── components
-│   │   │   ├── Auth
-│   │   │   │   ├── Login.js
-│   │   │   │   └── Signup.js
-│   │   │   ├── Confession
-│   │   │   │   ├── ConfessionForm.js
-│   │   │   │   └── ConfessionList.js
-│   │   │   └── Dashboard.js
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   ├── styles.css
-│   │   └── utils
-│   │       └── api.js
-│   ├── .env
-│   ├── package.json
-│   └── README.md
-└── README.md
-```
-
-## Backend Setup
-
-1. Navigate to the `backend` directory.
-2. Install dependencies:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/confessions.git
+   cd confessions/backend
    ```
+
+2. **Install dependencies:**
+   Make sure you have Node.js installed. Then run:
+   ```bash
    npm install
    ```
-3. Start the server:
+
+3. **Environment Variables:**
+   Create a `.env` file in the root of the backend directory and add the following variables:
    ```
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   ```
+
+4. **Run the application:**
+   Start the server with:
+   ```bash
    npm start
    ```
 
-## Frontend Setup
+## API Usage
 
-1. Navigate to the `frontend` directory.
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the development server:
-   ```
-   npm start
-   ```
+### Endpoints
 
-## Deployment
+- **POST /api/confessions**
+  - Create a new confession.
+  - Request body: `{ "userId": "string", "content": "string", "scheduledTime": "date" }`
 
-For deployment, you can use services like Heroku for the backend and Vercel or Netlify for the frontend. Make sure to configure environment variables as needed.
+- **GET /api/confessions**
+  - Retrieve all confessions.
 
-## Contributing
+- **DELETE /api/confessions/:id**
+  - Delete a confession by ID.
 
-Feel free to fork the repository and submit pull requests for any improvements or features you would like to add.
+## Technologies Used
+
+- Node.js
+- Express
+- Mongoose
+- dotenv
+- bcrypt
+- jsonwebtoken
 
 ## License
 
